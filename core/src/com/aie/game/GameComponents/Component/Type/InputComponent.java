@@ -1,6 +1,7 @@
 package com.aie.game.GameComponents.Component.Type;
 
 import com.aie.game.GameComponents.Component.Interfaces.Component;
+import com.aie.game.GameComponents.Entities.Entity;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.utils.Json;
 

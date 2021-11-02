@@ -1,6 +1,10 @@
 package com.aie.game.GameComponents.Component.Type;
 
+import com.aie.game.Assets.Map.Map;
 import com.aie.game.GameComponents.Component.Interfaces.Component;
+import com.aie.game.GameComponents.Entities.Entity;
+import com.aie.game.GameComponents.Entities.EntityFactory;
+import com.aie.game.GameComponents.Managers.MapManager;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;

@@ -2,6 +2,10 @@ package com.aie.game.Assets.Map;
 
 import com.aie.game.Assets.Audio.AudioObserver;
 import com.aie.game.Assets.Audio.AudioSubject;
+import com.aie.game.GameComponents.Entities.Entity;
+import com.aie.game.GameComponents.Managers.AudioManager;
+import com.aie.game.GameComponents.Managers.MapManager;
+import com.aie.game.GameComponents.Managers.ResourceManager;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;

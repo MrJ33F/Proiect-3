@@ -1,6 +1,8 @@
 package com.aie.game.GameComponents.Component.Type;
 
 import com.aie.game.GameComponents.Component.Interfaces.Component;
+import com.aie.game.GameComponents.Entities.Entity;
+import com.aie.game.GameComponents.Managers.MapManager;
 import com.aie.game.GameComponents.Managers.ResourceManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;

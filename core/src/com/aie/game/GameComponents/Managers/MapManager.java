@@ -1,5 +1,10 @@
 package com.aie.game.GameComponents.Managers;
 
+import com.aie.game.Assets.Map.Map;
+import com.aie.game.Assets.Map.MapFactory;
+import com.aie.game.GameComponents.Component.Type.ProfileManager;
+import com.aie.game.GameComponents.Entities.Entity;
+import com.aie.game.GameComponents.GameProfile.ProfileObserver;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Camera;
