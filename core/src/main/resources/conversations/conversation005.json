@@ -1,35 +1,36 @@
 {
-conversations: {
-        1: {
-                id: 1
-                dialog: Would you like to pick up the item?
-        }
-		2: {
-                id: 2
-                dialog: Ok
-        }
-        3: {
-                id: 3
-                dialog: Ok
-        }
-}
-associatedChoices: {
-        1: [
-                {
-                        class: com.gdx.game.dialog.ConversationChoice
-                        sourceId: 1
-                        destinationId: 2
-                        choicePhrase: Yes
-						conversationCommandEvent: ADD_ENTITY_TO_INVENTORY
+        conversations: {
+                1: {
+                        id: 1,
+                        dialog: Doriți să ridicați articolul?
+
                 }
-                {
-                        class: com.gdx.game.dialog.ConversationChoice
-                        sourceId: 1
-                        destinationId: 3
-                        choicePhrase: No
-						conversationCommandEvent: EXIT_CONVERSATION
+                2: {
+                        id: 2
+                        dialog: Bine
                 }
-	        ]
-}
-currentConversationID: 1
+                3: {
+                        id: 3
+                        dialog: Bine
+                }
+        }
+        associatedChoices: {
+                1: [
+                        {
+                                class: com.aie.game.GameComponents.GameUI.Dialog.ConversationChoice
+                                sourceId: 1
+                                destinationId: 2
+                                choicePhrase: Da
+                                conversationCommandEvent: ADD_ENTITY_TO_INVENTORY
+                        }
+                        {
+                                class: com.aie.game.GameComponents.GameUI.Dialog.ConversationChoice
+                                sourceId: 1
+                                destinationId: 3
+                                choicePhrase: Nu
+                                conversationCommandEvent: EXIT_CONVERSATION
+                        }
+                ]
+        }
+        currentConversationID: 1
 }

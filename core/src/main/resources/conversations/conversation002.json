@@ -1,11 +1,11 @@
 {
-conversations: {
-        1: {
-                id: 1
-                dialog: No time to conversate stranger. I must stay viligant at all times for the safety of our town!
+        conversations: {
+                1: {
+                        id: 1,
+                        dialog: Nu ai timp să vorbești cu un străin. Trebuie să rămân vigilent tot timpul pentru siguranța orașului nostru!
+                }
         }
-}
-associatedChoices: {
-}
-currentConversationID: 1
+        associatedChoices: {
+        }
+        currentConversationID: 1
 }

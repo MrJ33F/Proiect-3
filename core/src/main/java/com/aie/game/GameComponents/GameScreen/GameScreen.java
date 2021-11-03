@@ -51,6 +51,7 @@ public class GameScreen extends BaseScreen {
     }
     private static GameState gameState;
 
+
     protected OrthogonalTiledMapRenderer mapRenderer = null;
     protected MapManager mapManager;
     protected OrthographicCamera camera;
@@ -274,12 +275,12 @@ public class GameScreen extends BaseScreen {
         //update viewport if there could be skewing
         if(VIEWPORT.physicalWidth / VIEWPORT.physicalHeight >= VIEWPORT.aspectRatio) {
             //Letterbox left and right
-            VIEWPORT.viewportWidth = VIEWPORT.viewportHeight * (VIEWPORT.physicalWidth/VIEWPORT.physicalHeight);
+            VIEWPORT.viewportWidth = VIEWPORT.viewportHeight * (VIEWPORT.physicalWidth/ VIEWPORT.physicalHeight);
             VIEWPORT.viewportHeight = VIEWPORT.virtualHeight;
         } else {
             //letterbox above and below
             VIEWPORT.viewportWidth = VIEWPORT.virtualWidth;
-            VIEWPORT.viewportHeight = VIEWPORT.viewportWidth * (VIEWPORT.physicalHeight/VIEWPORT.physicalWidth);
+            VIEWPORT.viewportHeight = VIEWPORT.viewportWidth * (VIEWPORT.physicalHeight/ VIEWPORT.physicalWidth);
         }
 
         LOGGER.debug("WorldRenderer: virtual: (" + VIEWPORT.virtualWidth + "," + VIEWPORT.virtualHeight + ")" );

@@ -149,7 +149,7 @@ public class BattleScreen extends BaseScreen implements BattleObserver {
     public void onNotify(Entity entity, BattleEvent event) {
         switch(event) {
             case PLAYER_TURN_START:
-                LOGGER.debug("Player turn start");
+                LOGGER.debug("Jucatorul porneste");
                 battleUI.setVisible(false);
                 battleUI.setTouchable(Touchable.disabled);
                 break;
@@ -161,7 +161,7 @@ public class BattleScreen extends BaseScreen implements BattleObserver {
                 playerImage.addAction(Actions.moveTo(200, 200, 2));
 
                 currentPlayerImagePosition.set(((MoveToAction) playerImage.getActions().get(0)).getX(), playerImage.getY());
-                LOGGER.debug("Player added on battle map");
+                LOGGER.debug("Jucatorul a fost adaugat in harta de lupta");
                 break;
             case OPPONENT_ADDED:
                 opponentImage.setEntity(entity);
@@ -170,7 +170,7 @@ public class BattleScreen extends BaseScreen implements BattleObserver {
                 opponentImage.setPosition(600, 200);
 
                 currentOpponentImagePosition.set(opponentImage.getX(), opponentImage.getY());
-                LOGGER.debug("Opponent added on battle map");
+                LOGGER.debug("Oponentul a fost adaugat in harta de lupta");
                 /*if( battleShakeCam == null ){
                     battleShakeCam = new ShakeCamera(currentImagePosition.x, currentImagePosition.y, 30.0f);
                 }*/
@@ -193,14 +193,14 @@ public class BattleScreen extends BaseScreen implements BattleObserver {
                 dmgOpponentValLabel.setY(origDmgOpponentValLabelY);
                 //battleShakeCam.startShaking();
                 dmgOpponentValLabel.setVisible(true);
-                LOGGER.debug("Opponent deals " + damageEnemy + " damages");
+                LOGGER.debug("Loviturile oponentului " + damageEnemy + " daune");
                 break;
             case OPPONENT_DEFEATED:
                 dmgOpponentValLabel.setVisible(false);
                 dmgOpponentValLabel.setY(origDmgOpponentValLabelY);
                 //opponentImage.setVisible(false);
                 playerHUD.onNotify(enemy, BattleEvent.OPPONENT_DEFEATED); //TODO same
-                LOGGER.debug("Opponent is defeated");
+                LOGGER.debug("Oponentul este infrant");
 
                 ProfileManager.getInstance().saveProfile();
                 setScreenWithTransition((BaseScreen) gdxGame.getScreen(), gdxGame.getGameScreen(), new ArrayList<>());
@@ -209,15 +209,15 @@ public class BattleScreen extends BaseScreen implements BattleObserver {
             case OPPONENT_TURN_DONE:
                 battleUI.setVisible(true);
                 battleUI.setTouchable(Touchable.enabled);
-                LOGGER.debug("Opponent turn done");
+                LOGGER.debug("Oponentul refuza");
 
-                if(GameScreen.getGameState() == GameScreen.GameState.GAME_OVER) {
+                if(com.aie.game.GameComponents.GameScreen.GameScreen.getGameState() == com.aie.game.GameComponents.GameScreen.GameScreen.GameState.GAME_OVER) {
                     setupGameOver();
                 }
                 break;
             case PLAYER_TURN_DONE:
                 battleState.opponentAttacks();
-                LOGGER.debug("Player turn done");
+                LOGGER.debug("Jucatorul refuza");
                 break;
             /*case PLAYER_USED_MAGIC:
                 float x = currentImagePosition.x + (enemyWidth/2);

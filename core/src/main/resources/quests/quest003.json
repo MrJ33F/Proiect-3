@@ -52,7 +52,7 @@ questTasks: {
 questTaskDependencies: {
 	1: [
 		{
-			class: com.gdx.game.quest.QuestTaskDependency
+			class: com.aie.game.GameComponents.GameUI.Quest.QuestTaskDependency,
 			sourceId: 1
 			destinationId: 2
 		}

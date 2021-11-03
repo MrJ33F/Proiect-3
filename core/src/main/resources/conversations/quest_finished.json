@@ -1,11 +1,11 @@
 {
-conversations: {
-        1: {
-                id: 1
-                dialog: Thank you!
+        conversations: {
+                1: {
+                        id: 1
+                        dialog: Multumesc!
+                }
         }
-}
-associatedChoices: {
-}
-currentConversationID: 1
+        associatedChoices: {
+        }
+        currentConversationID: 1
 }

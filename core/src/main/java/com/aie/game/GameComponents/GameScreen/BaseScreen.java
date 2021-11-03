@@ -57,7 +57,7 @@ public class BaseScreen implements Screen, AudioSubject {
     public void setScreenWithTransition(BaseScreen current, BaseScreen next, List<TransitionEffect> transitionEffect) {
         ArrayList<TransitionEffect> effects = new ArrayList<>(transitionEffect);
 
-        Screen transitionScreen = new TransitionScreen(gdxGame, current, next, effects);
+        Screen transitionScreen = new com.aie.game.GameComponents.GameScreen.TransitionScreen(gdxGame, current, next, effects);
         gdxGame.setScreen(transitionScreen);
     }
 
