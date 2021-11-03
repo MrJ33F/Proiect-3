@@ -153,10 +153,10 @@ public class QuestGraph {
         Set<String> keys = questTasks.keySet();
         for(String id: keys) {
             if(doesQuestTaskHaveDependencies(id) && questTaskDep.getDestinationId().equalsIgnoreCase(id)) {
-                    //System.out.println("ID: " + id + " destID: " + questTaskDep.getDestinationId());
-                    return true;
-                }
+                //System.out.println("ID: " + id + " destID: " + questTaskDep.getDestinationId());
+                return true;
             }
+        }
         return false;
     }
 

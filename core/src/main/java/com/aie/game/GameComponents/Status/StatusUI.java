@@ -10,6 +10,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
+import static com.aie.game.GameComponents.Managers.ResourceManager.STATUS_UI_SKIN;
+import static com.aie.game.GameComponents.Managers.ResourceManager.STATUS_UI_TEXTURE_ATLAS;
+
 public class StatusUI extends Window implements StatusSubject {
     private Image hpBar;
     private Image mpBar;
@@ -23,15 +26,15 @@ public class StatusUI extends Window implements StatusSubject {
     private static final String LEVEL_TABLE_CONFIG = "scripts/level_tables.json";
 
     //Attributes
-    private int levelVal = -1;
-    private int goldVal = -1;
-    private int hpVal = -1;
-    private int mpVal = -1;
+    private int levelVal = 50;
+    private int goldVal = 50;
+    private int hpVal = 50;
+    private int mpVal = 50;
     private int xpVal = 0;
 
-    private int xpCurrentMax = -1;
-    private int hpCurrentMax = -1;
-    private int mpCurrentMax = -1;
+    private int xpCurrentMax = 50;
+    private int hpCurrentMax = 50;
+    private int mpCurrentMax = 50;
 
     private Label hpValLabel;
     private Label mpValLabel;
@@ -43,7 +46,7 @@ public class StatusUI extends Window implements StatusSubject {
     private float barHeight = 0;
 
     public StatusUI(){
-        super("stats", ResourceManager.STATUS_UI_SKIN);
+        super("stats", STATUS_UI_SKIN);
 
         levelTables = LevelTable.getLevelTables(LEVEL_TABLE_CONFIG);
 
@@ -78,11 +81,11 @@ public class StatusUI extends Window implements StatusSubject {
     private void handleHpBar() {
         WidgetGroup group = new WidgetGroup();
 
-        hpBar = new Image(ResourceManager.STATUS_UI_TEXTURE_ATLAS.findRegion("HP_Bar"));
-        Image bar = new Image(ResourceManager.STATUS_UI_TEXTURE_ATLAS.findRegion("Bar"));
+        hpBar = new Image(STATUS_UI_TEXTURE_ATLAS.findRegion("HP_Bar"));
+        Image bar = new Image(STATUS_UI_TEXTURE_ATLAS.findRegion("Bar"));
 
-        Label hpLabel = new Label(" hp: ", ResourceManager.STATUS_UI_SKIN);
-        hpValLabel = new Label(String.valueOf(hpVal), ResourceManager.STATUS_UI_SKIN);
+        Label hpLabel = new Label(" hp: ", STATUS_UI_SKIN);
+        hpValLabel = new Label(String.valueOf(hpVal), STATUS_UI_SKIN);
 
         hpBar.setPosition(3, 6);
 
@@ -98,11 +101,11 @@ public class StatusUI extends Window implements StatusSubject {
     private void handleMpBar() {
         WidgetGroup group2 = new WidgetGroup();
 
-        mpBar = new Image(ResourceManager.STATUS_UI_TEXTURE_ATLAS.findRegion("MP_Bar"));
-        Image bar2 = new Image(ResourceManager.STATUS_UI_TEXTURE_ATLAS.findRegion("Bar"));
+        mpBar = new Image(STATUS_UI_TEXTURE_ATLAS.findRegion("MP_Bar"));
+        Image bar2 = new Image(STATUS_UI_TEXTURE_ATLAS.findRegion("Bar"));
 
-        Label mpLabel = new Label(" mp: ", ResourceManager.STATUS_UI_SKIN);
-        mpValLabel = new Label(String.valueOf(mpVal), ResourceManager.STATUS_UI_SKIN);
+        Label mpLabel = new Label(" mp: ", STATUS_UI_SKIN);
+        mpValLabel = new Label(String.valueOf(mpVal), STATUS_UI_SKIN);
 
         mpBar.setPosition(3, 6);
 
@@ -118,11 +121,11 @@ public class StatusUI extends Window implements StatusSubject {
     private void handleXpBar() {
         WidgetGroup group3 = new WidgetGroup();
 
-        xpBar = new Image(ResourceManager.STATUS_UI_TEXTURE_ATLAS.findRegion("XP_Bar"));
-        Image bar3 = new Image(ResourceManager.STATUS_UI_TEXTURE_ATLAS.findRegion("Bar"));
+        xpBar = new Image(STATUS_UI_TEXTURE_ATLAS.findRegion("XP_Bar"));
+        Image bar3 = new Image(STATUS_UI_TEXTURE_ATLAS.findRegion("Bar"));
 
-        Label xpLabel = new Label(" xp: ", ResourceManager.STATUS_UI_SKIN);
-        xpValLabel = new Label(String.valueOf(xpVal), ResourceManager.STATUS_UI_SKIN);
+        Label xpLabel = new Label(" xp: ", STATUS_UI_SKIN);
+        xpValLabel = new Label(String.valueOf(xpVal), STATUS_UI_SKIN);
 
         xpBar.setPosition(3, 6);
 
@@ -136,30 +139,30 @@ public class StatusUI extends Window implements StatusSubject {
     }
 
     private void handleLevelLabel() {
-        Label levelLabel = new Label(" lv: ", ResourceManager.STATUS_UI_SKIN);
-        levelValLabel = new Label(String.valueOf(levelVal), ResourceManager.STATUS_UI_SKIN);
+        Label levelLabel = new Label(" lv: ", STATUS_UI_SKIN);
+        levelValLabel = new Label(String.valueOf(levelVal), STATUS_UI_SKIN);
 
         this.add(levelLabel).align(Align.left);
         this.add(levelValLabel).align(Align.left);
     }
 
     private void handleGoldLabel() {
-        Label goldLabel = new Label(" gp: ", ResourceManager.STATUS_UI_SKIN);
-        goldValLabel = new Label(String.valueOf(goldVal), ResourceManager.STATUS_UI_SKIN);
+        Label goldLabel = new Label(" gp: ", STATUS_UI_SKIN);
+        goldValLabel = new Label(String.valueOf(goldVal), STATUS_UI_SKIN);
 
         this.add(goldLabel);
         this.add(goldValLabel).align(Align.left);
     }
 
     private void handleInventoryButton() {
-        inventoryButton = new ImageButton(ResourceManager.STATUS_UI_SKIN, "inventory-button");
+        inventoryButton = new ImageButton(STATUS_UI_SKIN, "inventory-button");
         inventoryButton.getImageCell().size(32, 32);
 
         this.add(inventoryButton).align(Align.right);
     }
 
     private void handleQuestButton() {
-        questButton = new ImageButton(ResourceManager.STATUS_UI_SKIN, "quest-button");
+        questButton = new ImageButton(STATUS_UI_SKIN, "quest-button");
         questButton.getImageCell().size(32,32);
 
         this.add(questButton).align(Align.center);

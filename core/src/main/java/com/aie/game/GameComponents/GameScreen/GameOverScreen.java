@@ -32,17 +32,17 @@ public class GameOverScreen extends BaseScreen {
         gameOverTable = createTable();
         gameOverTable.setFillParent(true);
 
-        Label gameOverLabel = new Label("GAME OVER", ResourceManager.skin);
+        Label gameOverLabel = new Label("Sfarsitul jocului", ResourceManager.skin);
         gameOverLabel.setAlignment(Align.center);
-        TextButton continueButton = new TextButton("Continue", ResourceManager.skin);
+        TextButton continueButton = new TextButton("Continua", ResourceManager.skin);
         continueButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent input, float x, float y) {
                 mapManager.getPlayer().setEntityEncounteredType(null);
                 mapManager.getPlayer().sendMessage(Component.MESSAGE.RESET_POSITION);
-                int hpMax = ProfileManager.getInstance().getProperty("currentPlayerHPMax", Integer.class);
+                int hpMax = ProfileManager.getInstance().getProperty("HPMaxJucator", Integer.class);
 
-                ProfileManager.getInstance().setProperty("currentPlayerHP", (int) Math.round(hpMax * 0.1));
+                ProfileManager.getInstance().setProperty("HPcurentJucator", (int) Math.round(hpMax * 0.1));
                 ProfileManager.getInstance().saveProfile();
                 setScreenWithTransition((BaseScreen) gdxGame.getScreen(), gdxGame.getMenuScreen(), new ArrayList<>());
             }
